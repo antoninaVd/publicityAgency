@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.5"
+install: "pip install -r requirements.txt"
+script: python manage.py test
+deploy:
+  provider: heroku
+  api_key:
+    secure: "b2fdf530-bc60-4835-9b5b-5af78afe0a4f"
+  app: metrolicite

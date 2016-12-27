@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def news_list(request):
+def home(request):
     return render(request, 'publicity_agency/home.html', {})
 
 def order(request):
@@ -11,3 +11,6 @@ def requirements(request):
 
 def contact(request):
     return render(request, 'publicity_agency/contacts.html', {})
+
+def articles(request):
+    return render(request, 'publicity_agency/articles.html', {})

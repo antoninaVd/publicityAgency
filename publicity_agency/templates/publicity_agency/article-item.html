@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="com-md-12 col-sm-12 col-xs-12 text-left page-title">
 			<div class="section-title">
-				<p>Comment créer une social room?</p>
+				<p>{{ article.title }}</p>
 				<span></span>
 			</div>
 		</div>
@@ -23,21 +23,16 @@
 	<div class="row">
 		<div class="col-md-12">
 			<p class="article-item-preview">
-				Bien gérer la conversation entre sa marque et ses clients sur les réseaux sociaux, anticiper une crise ou créer un buzz... difficile de faire l'impasse sur une social room. Comment se lancer?
+				{{ article.preview }}
 			</p>
 			<div class="article-content">
-				Elles se nomment "social room", "war room", "news room" ou, encore, "hub room". Des appellations diverses pour un concept unique : être le centre névralgique de gestion des médias sociaux d'une entreprise. "La social room s'apparente à une opération commando d'experts réunis dans une même salle pour créer de la conversation sur les réseaux sociaux", explique Audrey Depommier, Head of social media au sein de l'agence de communication DDB. Mais, attention, prévient Arnaud Gaidon, également Head of social media de DDB, toutes les social room ne se ressemblent pas : "Il faut distinguer la social room 'éphémère' de la social room 'pérenne'. La première remplit le rôle de test, pour un coup de notoriété, par exemple, quand la social room pérenne, valable pour les grandes marques, s'inscrit dans des projets de plus longue durée, comme le développement de sa communication." <br>
-				
-				<strong>1/Définir ses objectifs</strong><br>
-
-				Une social room, pour quoi faire ? Générer du brand content, lancer un produit, créer un buzz, engager la relation avec ses clients... Les objectifs sont divers, mais celui adressé prioritairement par les marques est "l'image", prônent Audrey Depommier et Arnaud Gaidon, que ce soit pour parler de la marque à un instant T (social room éphémère) ou pour opérer un changement d'image à long terme (social room pérenne). La Sncf a, ainsi, créé en mars 2016 sa social room, dont elle a fait fortement usage à l'occasion de l'opération de communication, "#DemandezAuCM", en octobre 2016. L'idée : inviter les internautes à poser, de 7 heures à 22 heures, leurs questions sur Twitter... et récompenser, chaque heure, "la plus cool" des interrogations par des bons voyages. En une journée, 7 000 messages ont été publiés et 600 réponses ont été apportées sur Twitter et sur Facebook par les équipes de la Sncf, appuyées par l'agence ici Barbès. "La Sncf est une entreprise très médiatisée, avec une part de voix négatives, explique Nicolas Mouton, responsable de la communication digital et social media de la Sncf, intervenant du Hubday Future of Social Media. Notre social room vise à diminuer le nombre de conversations négatives et à engager la conversation avec le plus grand nombre de nos clients."
-
+				{{ article.content }}
 			</div>
 		</div>
 	</div>
 	<div class="row source-row">
 		<div class="col-md-6">
-			<p class="article-date">07.01.2017</p>
+			<p class="article-date">{{ article.date }}</p>
 		</div>
 		<div class="col-md-6 text-right">
 			<p class="article-source">

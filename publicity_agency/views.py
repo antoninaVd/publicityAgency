@@ -14,3 +14,6 @@ def contact(request):
 
 def articles(request):
     return render(request, 'publicity_agency/articles.html', {})
+
+def article_item(request):
+    return render(request, 'publicity_agency/article-item.html', {})

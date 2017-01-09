@@ -1,0 +1,22 @@
+.article-odd{
+	background-color: #f7f5f5;
+}
+.article-item-img{
+	max-height: 400px;
+    margin-bottom: 20px;
+}
+.article-item-preview{
+	font-size: 20px;
+	font-style:italic;
+}
+.article-content{
+	font-size: 18px;
+}
+.source-row{
+	margin-top: 20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.article-source, .article-source:hover, .article-source:focus{
+	color: #3d5975;
+}

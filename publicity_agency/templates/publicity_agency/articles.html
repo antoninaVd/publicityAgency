@@ -6,7 +6,7 @@
 {% block content %}
 <div class="container-fluid">
 	<div class="row">
-		<div class="com-md-12 col-sm-12 col-xs-12 text-left page-title">
+		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 text-left page-title">
 			<div class="section-title">
 				<p>articles</p>
 				<span></span>
@@ -15,15 +15,19 @@
 	</div>
 </div>
 <div class="container-fluid">
-{% for article in articles %}
-	<div class="row article-item article-odd">
-		<div class="col-md-3 col-sm-3">
-			<img src="{% static 'img/article1.jpg'%}" class="article-img" alt="Comment créer une social room?">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<img class="section-img" src="{% static 'img/articles.jpg' %}" alt="">
 		</div>
-		<div class="col-md-9 col-sm-9">
+	</div>
+</div>
+<div class="container-fluid">
+{% for article in articles %}
+	<div class="row article-item">
+		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<span class="date">{{ article.date|date:'j N o' }}</span>
 			<a href="{% url 'article_item' pk=article.pk %}" class="article-link">{{ article.title }}</a>
 			<p class="article-preview">{{ article.preview }}</p>
-			<p class="date text-right">{{ article.date }}</p>
 		</div>
 	</div>
 {% endfor %}

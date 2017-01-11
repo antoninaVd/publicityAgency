@@ -1,17 +1,17 @@
 
 .start-block{
-   padding: 15vh 10px;
-   width: 100%;
-   position: relative;
-   background: #525558 url(../img/main-img.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
-   text-align: center;
-   min-height: 350px;
-   height: -webkit-calc(100vh - 105px);
-   height: -moz-calc(100vh - 105px);
-   height: calc(100vh - 105px);
+ padding: 15vh 10px;
+ width: 100%;
+ position: relative;
+ background: #525558 url(../img/main-img.jpg);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ text-align: center;
+ min-height: 350px;
+ height: -webkit-calc(100vh - 105px);
+ height: -moz-calc(100vh - 105px);
+ height: calc(100vh - 105px);
 }
 
 .start-title{
@@ -110,6 +110,28 @@
     font-size: 22px;
     font-weight: bold;
 }
+/*ARTICLES*/
+.article-link{
+    font-size: 30px;
+    color: #3d5975;
+}
+.article-preview{
+    font-size: 18px;
+}
+.article-item{
+    padding: 20px 10px;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+.article-item:hover{
+    background: rgba(198, 198, 198, 0.25);
+}
+.date{
+    font-size: 16px;
+    padding-right: 10px;
+    font-weight: bold;
+}
 /*RESPONSIVE*/
 @media only screen and (min-width: 1200px) {
     .about{
@@ -185,6 +207,9 @@
         top: -13px;
         margin-left: 10px;
     }
+    .article-link{
+        font-size: 25px;
+    }
 }
 
 @media only screen and (max-width: 450px) {
@@ -195,5 +220,9 @@
         display: block;
         top: 0;
         margin-left: 0;
+    }
+    .article-link {
+        display: block;
+        padding: 10px 0;
     }
 }

@@ -126,43 +126,28 @@ footer a, footer a:hover{
 	clear: both;
 }
 .btn-standart{
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: #edcd1f;
-    border: solid 1px #d2b519;
-    border-radius: 3px;
-    font-size: 23px;
-    color: #fff;
-    margin-top: 15px;
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
-    }
+	display: inline-block;
+	padding: 10px 25px;
+	background-color: #edcd1f;
+	border: solid 1px #d2b519;
+	border-radius: 3px;
+	font-size: 23px;
+	color: #fff;
+	margin-top: 15px;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
 
 .btn-standart:focus, .btn-standart:hover {
-    text-decoration: none;
-    color: #fff;
+	text-decoration: none;
+	color: #fff;
 }
 
 .btn-standart:hover{
-    background-color: #d2b519;
+	background-color: #d2b519;
 }
-/*ARTICLE*/
-.article-img{
-	max-width: 100%;
-	width: 100%;
-	margin-top: 10px;
-}
-.article-link{
-	font-size: 30px;
-    color: #3d5975;
-}
-.article-preview{
-	font-size: 18px;
-}
-.article-item{
-	margin-bottom: 25px;
-}
+
 /*RESPONSIVE*/
 
 @media only screen and (min-width: 768px) {
@@ -237,6 +222,12 @@ footer a, footer a:hover{
 		display: block;
 	}
 	.networks-links{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.section-img{
 		display: none;
 	}
 }

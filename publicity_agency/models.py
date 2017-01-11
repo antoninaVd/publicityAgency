@@ -8,8 +8,9 @@ class Article(models.Model):
 	date = models.DateTimeField(default=timezone.now)
 	source = models.CharField(max_length=500)
 
-def publish(self):
-	self.date = timezone.now()
-	self.save()
+	def publish(self):
+		self.date = timezone.now()
+		self.save()
 
-# Create your models here.
+	def __str__(self):
+		return self.title

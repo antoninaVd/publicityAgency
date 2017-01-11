@@ -6,7 +6,7 @@
 {% block content %}
 <div class="container-fluid">
 	<div class="row">
-		<div class="com-md-12 col-sm-12 col-xs-12 text-left page-title">
+		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 text-left page-title">
 			<div class="section-title">
 				<p>articles</p>
 				<span></span>
@@ -15,25 +15,21 @@
 	</div>
 </div>
 <div class="container-fluid">
-	<div class="row article-item article-odd">
-		<div class="col-md-3 col-sm-3">
-			<img src="{% static 'img/article1.jpg'%}" class="article-img" alt="Comment créer une social room?">
-		</div>
-		<div class="col-md-9 col-sm-9">
-			<a href="http://www.e-marketing.fr/Thematique/general-1080/Breves/Comment-creer-social-room-312595.htm#E98Z00yQJ1M3oZ61.97" class="article-link">Comment créer une social room?</a>
-			<p class="article-preview">Bien gérer la conversation entre sa marque et ses clients sur les réseaux sociaux, anticiper une crise ou créer un buzz... difficile de faire l'impasse sur une social room. Comment se lancer?</p>
-			<p class="date text-right">07.01.2017</p>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<img class="section-img" src="{% static 'img/articles.jpg' %}" alt="">
 		</div>
 	</div>
+</div>
+<div class="container-fluid">
+{% for article in articles %}
 	<div class="row article-item">
-		<div class="col-md-3 col-sm-3">
-			<img src="{% static 'img/article2.jpg'%}" class="article-img" alt="Les 10 commandements pour générer des leads qualifiés en immobilier">
-		</div>
-		<div class="col-md-9 col-sm-9">
-			<a href="http://www.webmarketing-com.com/2017/01/06/55072-10-commandements-generer-leads-qualifies-immobilier" class="article-link">Les 10 commandements pour générer des leads qualifiés en immobilier</a>
-			<p class="article-preview">Votre site est actif depuis un certain temps et attire beaucoup de visiteurs. Une question vous intrigue cependant : comment exploiter ce trafic pour générer des leads utiles et les convertir ? Découvrez les 10 recommandations pratiques pour générer des leads qualifiés…</p>
-			<p class="date text-right">07.01.2017</p>
+		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<span class="date">{{ article.date|date:'j N o' }}</span>
+			<a href="{% url 'article_item' pk=article.pk %}" class="article-link">{{ article.title }}</a>
+			<p class="article-preview">{{ article.preview }}</p>
 		</div>
 	</div>
+{% endfor %}
 </div>
 {% endblock content %}

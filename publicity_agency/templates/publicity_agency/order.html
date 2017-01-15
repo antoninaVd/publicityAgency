@@ -1,5 +1,14 @@
 {% extends 'publicity_agency/index.html' %}
 {% block content %}
-	<!-- Here write your code -->
-	<p><i class="fa fa-list-alt" aria-hidden="true"></i> Order page</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<form name = "form" action = "{% url 'contact' %}" method = "POST" >
+				{% csrf_token %}
+					{{ form.as_p }}
+					<button type="submit">Login</button>
+				</form>
+			</div>
+		</div>
+	</div>
 {% endblock content %}

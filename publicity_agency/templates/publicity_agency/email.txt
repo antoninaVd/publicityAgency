@@ -1,0 +1,13 @@
+Bonjour,
+Vous avez reçu une nouvelle commande.
+Détails:
+1) Nom d'entreprise: {{company}}
+2) Produit à promovoir: {{product}}
+3) Type de publicité: {{publicity_type}}
+4) Est-ce qu'il faul faire le design? {% if design %}Oui {% else %} Non{% endif %}
+5) Durée de campagne de publicité: {{duration}}
+
+Contacts
+1) Personne à contacter: {{contact}}
+2) Téléphone: {{company}}
+3) Email: {{email}}

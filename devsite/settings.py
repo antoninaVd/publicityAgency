@@ -132,7 +132,7 @@ except ImportError:
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'metrolicite@gmail.com'
-EMAIL_HOST_PASSWORD = 'metrolicite123456'
+EMAIL_HOST_USER = 'prmondeagence@gmail.com'
+EMAIL_HOST_PASSWORD = 'prmonde123456'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL='PRMonde Support '

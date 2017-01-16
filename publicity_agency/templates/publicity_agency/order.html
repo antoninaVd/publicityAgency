@@ -1,8 +1,10 @@
 {% extends 'publicity_agency/index.html' %}
+{% load staticfiles %}
 {% block content %}
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+			<a href="{% static 'doc/CV.pdf' %}" target="_blank">Price list</a>
 				<form name = "form" action = "{% url 'contact' %}" method = "POST" >
 				{% csrf_token %}
 					{{ form.as_p }}

@@ -45,8 +45,8 @@ def contact(request):
 				msg_html = render_to_string('../templates/publicity_agency/email.html', {'company':company,'product':product,'design':design,'duration':duration,'contact':contact,'tel':tel,'email':email, 'publicity_type':publicity_type})
 				msg_plain_client = render_to_string('../templates/publicity_agency/email_client.txt')
 				msg_html_client = render_to_string('../templates/publicity_agency/email_client.html')
-				send_mail('New order',msg_plain,'PRMonde notification <metrolicite@gmail.com>', ['metrolicite@gmail.com'], html_message=msg_html)
-				send_mail('PRMonde order',msg_plain_client,'PRMonde <metrolicite@gmail.com>', [email], html_message=msg_html_client)
+				send_mail('New order',msg_plain,'PRMonde notification <prmondeagence@gmail.com>', ['prmondeagence@gmail.com'], html_message=msg_html)
+				send_mail('PRMonde order',msg_plain_client,'PRMonde <prmondeagence@gmail.com>', [email], html_message=msg_html_client)
 			except BadHeaderError:
 				return HttpResponse('Invalid header found')
 			return redirect('contact')

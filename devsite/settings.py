@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u#fx!b=o$li9t-$_t8v8=!f3#$x_6v#sl7$1xulku(!#itrp#k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -129,3 +129,10 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'prmondeagence@gmail.com'
+EMAIL_HOST_PASSWORD = 'prmonde123456'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL='PRMonde Support '

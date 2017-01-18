@@ -1,0 +1,42 @@
+{% extends 'publicity_agency/index.html' %}
+{% load staticfiles %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="{% static 'css/articles.css' %}"/>
+{% endblock stylesheet %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="com-md-12 col-sm-12 col-xs-12 text-left page-title">
+			<div class="section-title article-title">
+				<p>{{ article.title }}</p>
+				<span></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<p class="article-item-preview">
+				{{ article.preview }}
+			</p>
+			<div class="article-content">
+				{{ article.content|safe }}
+			</div>
+		</div>
+	</div>
+	<div class="row source-row">
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<p class="article-date">{{ article.date|date:'j N o' }}</p>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+			<p class="article-source">
+				<a href="{{ article.source }}" target="_blank">La source de l'article</a>
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+{% block scripts %}
+	<script src="{% static 'js/article.js' %}"/></script>
+{% endblock scripts %}

@@ -1,5 +1,132 @@
 {% extends 'publicity_agency/index.html' %}
+{% load staticfiles %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+{% endblock stylesheet %}
+
 {% block content %}
-	<!-- Here write your code -->
-	<p><i class="fa fa-home" aria-hidden="true"></i> Homepage</p>
+<section class="start-block">
+	<div class="start-title">
+		<p>PRMonde est une agence de communication créative unique. Créateurs de synergie, nous avons le talent pour regrouper efficacement les expertises afin de vous aider à vous démarquer.</p>
+		<p class="arrow-more">
+			<a href="#our-services">
+				<i class="fa fa-angle-down" aria-hidden="true"></i>
+			</a>
+		</p>
+	</div>
+</section>
+<section class="our-services" id="our-services">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 section-title">
+				<p>nos services</p>
+				<span></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12 text-center service-item">
+				<img src="{% static 'img/design.png' %}" alt="Design graphique">
+				<div class="service-description">
+					<p>Design graphique</p>
+					<p>Chaque expert en branding ou communication visuelle vous le dira: un design qui atteint ses objectifs est un design qui répond d’abord aux besoins des clients. C’est pourquoi chacun de nos designers prévoit un temps de recherche afin de cerner à la fois le profil de votre public cible, mais aussi leurs comportements, que ce soit en ligne ou dans leur consommation de médias traditionnels.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12 text-center service-item">
+				<img src="{% static 'img/transport.png' %}" alt="Publicité dans le transport">
+				<div class="service-description">
+					<p>Publicité dans le transport</p>
+					<p>Aujourd’hui, les cibles les plus stratégiques de la publicité sont les individus les plus mobiles. Pour les toucher, il faut être présent là où ils sont réceptifs et disponibles, directement sur leurs lieux de mobilité : les métros et les bus, des services en ajustement constant avec les transformations des pôles urbains, et les gares, qui bénéficient de situations privilégiées dans l’espace urbain.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12 text-center service-item">
+				<img src="{% static 'img/presse.png' %}" alt="Campagne presse">
+				<div class="service-description">
+					<p>Campagne presse</p>
+					<p>Les relations presse offrent un cadre d’expression privilégié et flexible pour une entreprise qui souhaite mettre en scène ses produits, travailler son image, communiquer sur ses valeurs, asseoir sa notoriété, se bâtir une réputation ou la défaire …</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="about-us">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div class="about">
+					<div class="section-title">
+						<p>qui sommes nous</p>
+						<span></span>
+					</div>
+					<div class="about-description">
+					<p><strong>PRMonde</strong> est une agence de communication d’abord et avant tout qui a su adapter son offre au fil des années. C’est une agence marketing, de publicité, une firme-conseil en stratégie 360. Une agence totale. C’est une équipe créative, génératrice d’idées, passionnée de la vidéo et génie de l’informatique. En mode recherche et développement depuis 2007, l’équipe de PRMonde développe des solutions originales et innovatrices pour surpasser les objectifs de nos clients.</p> 
+						<p>
+							<strong>Notre mission</strong> est de créer de la synergie entre les marques et les gens en utilisant tous les canaux de communication mis à notre disposition.
+						</p>
+						<p>
+							Notre seule <strong>priorité est le public</strong>. Alors, nous proposons des idées intelligentes et sensibles.
+						</p>
+						<p> Une marque c’est <strong>un style</strong>. Et pas le nôtre. Alors, nos campagnes sont très spécifiques aux entreprises pour lesquelles nous travaillons et donc très différentes les unes des autres.
+						</p>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-md-6  col-sm-12 about-img"> 
+			</div>
+		</div>
+	</div>
+</section>
+<section class="statistic">
+	<div class="container">
+		<div class="row">
+			<div class="statistic-item text-center">
+				<span class="statictic-number">10</span>
+				<p>ans de travail</p>
+			</div>
+			<span class="border"></span>
+			<div class="statistic-item text-center">
+				<span class="statictic-number">40</span>
+				<p>spécialistes créatifs</p>
+			</div>
+			<span class="border"></span>
+			<div class="statistic-item text-center">
+				<div>
+					<span class="statictic-number">4</span>
+					<p>succursales dans le monde</p>
+				</div>
+			</div>
+			<span class="border"></span>
+			<div class="statistic-item text-center">
+				<span class="statictic-number">230+</span>
+				<p>clients satisfaits</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="articles">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 section-title">
+				<p>articles</p>
+				<span></span>
+			</div>
+		</div>
+		{% for article in articles %}
+		<div class="row article-item">
+			<div class="col-md-12 col-sm-12">
+				<span class="date">{{ article.date|date:'j N o' }}</span>
+				<a href="{% url 'article_item' pk=article.pk %}" class="article-link">{{ article.title }}</a>
+				<p class="article-preview">{{ article.preview }}</p>
+			</div>
+		</div>
+		{% endfor %}
+		<p class="text-center">
+			<a class="btn-standart" href="{% url 'articles'%}">Lire tous les articles</a>
+		</p>
+	</div>
+</section>
+<div class="clear"></div>
 {% endblock content %}
+{% block scripts %}
+	<script src="{% static 'js/home.js' %}"/></script>
+{% endblock scripts %}

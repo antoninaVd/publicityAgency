@@ -1,0 +1,20 @@
+<table style="font-size: 16px;font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;">
+	<tbody>
+		<tr>
+			<td style="padding: 15px; margin: 0;">
+				<p style="margin: 0; margin-bottom: 10px;">Bonjour,</p>
+				<p style="margin: 0; margin-bottom: 10px;">Vous avez reçu une nouvelle commande.</p>
+				<p style="font-size: 20px; text-align:center;"><strong>Détails</strong></p>
+				<p><strong>Nom d'entreprise:</strong> {{company}}</p>
+				<p><strong>Produit à promovoir:</strong> {{product}}</p>
+				<p><strong>Type de publicité:</strong> {{publicity_type}}</p>
+				<p><strong>Est-ce qu'il faul faire le design?</strong> {% if design %}Oui {% else %} Non{% endif %}</p>
+				<p><strong>Durée de campagne de publicité:</strong> {{duration}}</p>
+				<p style="font-size: 20px; text-align:center;"><strong>Contacts</strong></p>
+				<p><strong>Personne à contacter:</strong> {{contact}}</p>
+				<p><strong>Téléphone:</strong> {{tel}}</p>
+				<p><strong>Email:</strong> {{email}}</p>
+			</td>
+		</tr>
+	</tbody>
+</table>

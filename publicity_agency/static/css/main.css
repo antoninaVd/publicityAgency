@@ -1,0 +1,233 @@
+body, html{
+	margin:0;
+	padding: 0;
+	height: 100%;
+	color:#333;
+}
+.wrapper{
+	min-height: 100%;
+	position: relative;
+	padding-bottom:170px;
+}
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.navbar-default .navbar-menu ul li a{
+	padding-top: 55px;
+	padding-bottom: 25px;
+	font-size: 14px;
+	color:#fff;
+	text-transform: uppercase;
+	transition: color 0.4s ease 0s;
+}
+.navbar-default .navbar-menu ul .active a{
+	background-image: none;
+	background-color: #1e2d3b;
+	box-shadow: none;
+	color:#edcd1f;
+}
+.navbar-default .navbar-menu ul li a:hover, .navbar-default .navbar-menu ul .active a:hover{
+	cursor: pointer;
+	color:#edcd1f;
+	background-color: #1e2d3b;
+}
+.navbar-default .navbar-brand, .navbar-default  .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+	height: 100px;
+	background-color: #edcd1f;
+	width: 233px;
+}
+.navbar-default{
+	border-radius: 0;
+	background-color: #1e2d3b;
+	background-image: none;
+	margin-bottom: 0;
+	box-shadow: none;
+	border:none;
+}
+
+.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	border: none;
+	background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #1e2d3b;
+}
+.navbar-brand{
+	padding: 5px 15px;
+}
+.navbar-brand img{
+	height: 100%;
+}
+footer{
+	height: 170px;
+	background-color: #1e2d3b;
+	color:#fff;
+	font-size: 16px;
+}
+footer a, footer a:hover{
+	color:#fff;
+}
+
+.contacts-title{
+	margin-top: 20px;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.networks-links{
+	font-size: 36px;
+	margin: 0;
+	margin-top: 50px;
+}
+.networks-links-mob{
+	font-size: 18px;
+}
+.networks-links-mob a{
+	padding-right: 10px;
+}
+.networks-links span{
+	display: inline-block;
+	height: 60px;
+	background-color: rgba(237, 205, 31, 0);
+	width: 60px;
+	border-radius: 50%;
+	text-align: center;
+	transition: all 0.4s ease 0s;
+}
+.networks-links span:hover{
+	background-color: rgba(237, 205, 31, 0.7);
+}
+.networks-links i{
+	position: relative;
+	top:5px;
+}
+/*Section title*/
+.section-title{
+	text-align: center;
+	margin: 35px 0;
+}
+
+.section-title p{
+	color: #C6C6C6;
+	margin: 0;
+	text-transform: uppercase;
+}
+.section-title span{
+	width: 116px;
+	display: inline-block;
+}
+/*Page title*/
+.page-title .section-title{
+	text-align: left;
+}
+.clear{
+	clear: both;
+}
+.btn-standart{
+	display: inline-block;
+	padding: 10px 25px;
+	background-color: #edcd1f;
+	border: solid 1px #d2b519;
+	border-radius: 3px;
+	font-size: 23px;
+	color: #fff;
+	margin-top: 15px;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+.btn-standart:focus, .btn-standart:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.btn-standart:hover{
+	background-color: #d2b519;
+}
+
+/*RESPONSIVE*/
+
+@media only screen and (min-width: 768px) {
+	.navbar-default {
+		background-color: #1e2d3b;
+	}
+	.navbar-brand{
+		padding: 5px 15px;
+	}
+	.navbar-brand img{
+		margin: 0 auto;
+	}
+	.section-title p{
+		font-size: 50px;
+
+	}
+	.section-title span{
+		border-bottom: solid 10px #edcd1f;
+	}
+	.networks-links-mob{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.navbar-default {
+		background-color: #edcd1f;
+	}
+
+	.navbar-default .navbar-menu ul li a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		text-align: center;
+		border-bottom: solid 2px #fff;
+		width: 150px;
+		margin: 0 auto;
+		color:#333;
+	}
+
+	.navbar-default .navbar-menu ul li a:hover, .navbar-default .navbar-menu ul .active a:hover{
+		background-color: #edcd1f;
+		color:#333;
+	}
+
+	.navbar-default .navbar-menu ul li:last-child a{
+		border-bottom: none;
+	}
+
+	.navbar-default .navbar-menu ul .active a{
+		background-color: #edcd1f;
+		color: #fff;
+	}
+
+	.navbar-collapse{
+		border-top: none;
+	}
+
+	.navbar-brand{
+		padding-left: 25px;
+	}
+	.navbar-brand img{
+		margin: 0;
+	}
+	.section-title p{
+		font-size: 40px;
+
+	}
+	.section-title span{
+		border-bottom: solid 7px #edcd1f;
+	}
+	.networks-links-mob{
+		display: block;
+	}
+	.networks-links{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.section-img{
+		display: none;
+	}
+}

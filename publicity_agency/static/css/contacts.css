@@ -1,0 +1,38 @@
+.contact-details-row{
+	font-size: 18px;
+}
+.contact-details-title {
+    font-weight: bold;
+    color: #1e2d3b;
+    text-transform: uppercase;
+    margin: 5px 0 0px 0;
+}
+.contacts-link{
+	color:#333;
+}
+.map-row{
+	margin:30px 0;
+}
+.career-title{
+	text-align: left;
+}
+.career-title p{
+	font-size: 40px;
+}
+.career-description{
+	font-size: 18px;
+}
+.career-description a:hover {
+	color:#1e2d3b;
+}
+.career-row {
+	margin-bottom: 30px;
+}
+.career-row img{
+	max-width: 100%;
+}
+@media only screen and (max-width: 768px){
+	.career-title p {
+		font-size: 30px;
+	}
+}

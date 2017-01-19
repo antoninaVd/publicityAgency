@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Article
 from .forms import OrderForm
 
@@ -58,7 +59,17 @@ def form_success(request):
 	return render(request, 'publicity_agency/order-success.html', {})
 
 def articles(request):
-	articles = Article.objects.filter(date__lte=timezone.now()).order_by('-date')
+	articles_list = Article.objects.filter(date__lte=timezone.now()).order_by('-date')
+	page = request.GET.get('page')
+	paginator = Paginator(articles_list, 10)
+
+	try:
+		articles = paginator.page(page)
+	except PageNotAnInteger:
+		articles = paginator.page(1)
+	except EmptyPage:
+		articles = paginator.page(paginator.num_pages)
+
 	return render(request, 'publicity_agency/articles.html', {'articles' : articles})
 
 def article_item(request, pk):

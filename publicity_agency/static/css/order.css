@@ -21,7 +21,7 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-.form-item{
+.form-item, .form-item-design{
 	margin: 20px 0;
 }
 .form-item label{
@@ -46,7 +46,11 @@
     margin: 30px 0;
     font-weight: bold;
 }
-
+.error-message{
+    font-size: 14px;
+    color: #f00;
+    font-style: italic;
+}
 
 /*ORDER CONFIRMATION*/
 .order-confirmation{

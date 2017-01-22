@@ -4,9 +4,9 @@
 	<link rel="stylesheet" href="{% static 'css/articles.css' %}"/>
 {% endblock stylesheet %}
 {% block content %}
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 text-left page-title">
+		<div class="col-md-12 col-sm-12 col-xs-12 text-left page-title">
 			<div class="section-title">
 				<p>articles</p>
 				<span></span>
@@ -14,22 +14,48 @@
 		</div>
 	</div>
 </div>
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+		<div class="col-md-12 col-sm-12 col-xs-12">
 			<img class="section-img" src="{% static 'img/articles.jpg' %}" alt="">
 		</div>
 	</div>
 </div>
-<div class="container-fluid">
+<div class="container">
 {% for article in articles %}
 	<div class="row article-item">
-		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+		<div class="col-md-12 col-sm-12 col-xs-12">
 			<span class="date">{{ article.date|date:'j N o' }}</span>
 			<a href="{% url 'article_item' pk=article.pk %}" class="article-link">{{ article.title }}</a>
 			<p class="article-preview">{{ article.preview }}</p>
 		</div>
 	</div>
 {% endfor %}
+<div class="row">
+	<div class="col-md-12 text-center">
+		{% if articles.has_other_pages %}
+		<ul class="pagination">
+			{% if articles.has_previous %}
+			<li><a href="?page={{ articles.previous_page_number }}">&laquo;</a></li>
+			{% else %}
+			<li class="disabled"><span>&laquo;</span></li>
+			{% endif %}
+			{% for i in articles.paginator.page_range %}
+			{% if articles.number == i %}
+			<li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+			{% else %}
+			<li><a href="?page={{ i }}">{{ i }}</a></li>
+			{% endif %}
+			{% endfor %}
+			{% if articles.has_next %}
+			<li><a href="?page={{ articles.next_page_number }}">&raquo;</a></li>
+			{% else %}
+			<li class="disabled"><span>&raquo;</span></li>
+			{% endif %}
+		</ul>
+		{% endif %}
+	</div>
+</div>
+
 </div>
 {% endblock content %}

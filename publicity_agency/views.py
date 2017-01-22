@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Article
 from .forms import OrderForm
 
@@ -11,13 +12,6 @@ def home(request):
 	return render(request, 'publicity_agency/home.html', {'articles':articles})
 
 def order(request):
-	form=OrderForm(request.POST)
-	return render(request, 'publicity_agency/order.html', {'form':form})
-
-def requirements(request):
-    return render(request, 'publicity_agency/requirements.html', {})
-
-def contact(request):
 	company='no company'
 	product='no product'
 	design=False
@@ -49,14 +43,33 @@ def contact(request):
 				send_mail('PRMonde order',msg_plain_client,'PRMonde <prmondeagence@gmail.com>', [email], html_message=msg_html_client)
 			except BadHeaderError:
 				return HttpResponse('Invalid header found')
-			return redirect('contact')
+			return redirect('form_success')
 	else:
 		form=OrderForm()
 
-	return render(request, 'publicity_agency/contacts.html', {'company':company,'product':product,'design':design,'duration':duration,'contact':contact,'tel':tel,'email':email, 'publicity_type':publicity_type})
+	return render(request, 'publicity_agency/order.html', {})
+
+def requirements(request):
+    return render(request, 'publicity_agency/requirements.html', {})
+
+def contact(request):
+	return render(request, 'publicity_agency/contacts.html', {})
+
+def form_success(request):
+	return render(request, 'publicity_agency/order-success.html', {})
 
 def articles(request):
-	articles = Article.objects.filter(date__lte=timezone.now()).order_by('-date')
+	articles_list = Article.objects.filter(date__lte=timezone.now()).order_by('-date')
+	page = request.GET.get('page')
+	paginator = Paginator(articles_list, 10)
+
+	try:
+		articles = paginator.page(page)
+	except PageNotAnInteger:
+		articles = paginator.page(1)
+	except EmptyPage:
+		articles = paginator.page(paginator.num_pages)
+
 	return render(request, 'publicity_agency/articles.html', {'articles' : articles})
 
 def article_item(request, pk):

@@ -1,13 +1,61 @@
 {% extends 'publicity_agency/index.html' %}
+{% load staticfiles %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="{% static 'css/contacts.css' %}"/>
+{% endblock stylesheet %}
 {% block content %}
-	<!-- Here write your code -->
-	<p><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Contacts page</p>
-	<p>Company name: {{company}}</p>
-	<p>Product name: {{product}}</p>
-	<p>Design: {{design}}</p>
-	<p>Duration: {{duration}}</p>
-	<p>Contact: {{contact}}</p>
-	<p>TEl: {{tel}}</p>
-	<p>Email: {{email}}</p>
-	<p>publicity_type: {{publicity_type}}</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12 text-left page-title">
+			<div class="section-title">
+				<p>contacts</p>
+				<span></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row contact-details-row">
+		<div class="col-md-8 col-sm-8 col-xs-12">
+			<p class="contact-details-title">Adresse</p>
+			<p>25 Rue de Cléry, 75002 Paris, France</p>
+			<p>Nous vous attendons chez nous <strong>lundi-vendredi de 9:00 à 18:00</strong></p>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<p class="contact-details-title">Téléphone</p>
+			<a href="tel:+33 1 25 59 96 41" class="contacts-link"> +33 1 25 59 96 41</a>
+			<p class="contact-details-title">Email</p>
+			<a href="mailto:prmonde@gmail.com" class="contacts-link">prmonde@gmail.com</a>
+		</div>
+	</div>
+	<div class="row map-row">
+		<div class="col-md-12">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.4707953367915!2d2.344645251412151!3d48.86830097918684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e17c81e85ed%3A0x8276f1ffc999a6cb!2s25+Rue+de+Cl%C3%A9ry%2C+75002+Paris%2C+France!5e0!3m2!1sen!2sua!4v1484848950571" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+		
+	</div>
+</div>
+<div class="container">
+	<div class="row career-row">
+		<div class="col-md-12">
+			<div class="section-title career-title">
+				<p>Carrière</p>
+				<span></span>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<p class="career-description">
+				Nous sommes ouverts aux personnes talentueuses, enthousiastes et engagées qui sont capables de contribuer au développement de l'entreprise. Si vous êtes passionnés par des médias, design ou marketing, si vous voulez vous dévélopper dans une entreprise en plein croissance, n'hésitez pas nous <strong>envoyer votre CV</strong> à <a href="mailto:prmonde_recruit@gmail.com" class="contacts-link">prmonde_recruit@gmail.com</a>. Rejoins notre équipe!
+			</p>
+		</div>
+		<div class="col-md-4">
+			<img src="{% static 'img/career.jpeg' %}" alt="Career">
+		</div>
+	</div>
+</div>
+
+	
 {% endblock content %}
+{% block scripts %}
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+{% endblock scripts %}
